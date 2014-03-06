@@ -12,7 +12,7 @@ DEST_DIR='puppet-enterprise-3.2.0-el-6-x86_64'
 # okay, lets get to work!
 curl "${PUPPET_URL}/${TARBALL}" -o "${DOWNLOAD_DIR}/${TARBALL}"
 
-tar -xzf "${DOWNLOAD_DIR}/${TARBALL}"
+tar -xzf "${DOWNLOAD_DIR}/${TARBALL}" -C "${DOWNLOAD_DIR}"
 
 $DOWNLOAD_DIR/$DEST_DIR/puppet-enterprise-installer -a $PWD/answerfile.txt
 

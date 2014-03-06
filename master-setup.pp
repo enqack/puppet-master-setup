@@ -23,6 +23,6 @@ package {'hiera-eyaml':
 }
 
 file {'/etc/puppetlabs/puppet/hiera.yaml':
-  ensure => file
-  source => '/root/puppet-master-setup/hiera.yaml'
+  ensure => file,
+  source => '/root/puppet-master-setup/hiera.yaml',
 }

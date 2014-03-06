@@ -3,7 +3,7 @@
 #
 
 # lets set some variables
-PUPPET_URL="https://s3.amazonaws.com/pe-builds/released/3.2.0/"
+PUPPET_URL="https://s3.amazonaws.com/pe-builds/released/3.2.0"
 TARBALL='puppet-enterprise-3.2.0-el-6-x86_64.tar.gz'
 DOWNLOAD_DIR='/root/Downloads'
 DEST_DIR='puppet-enterprise-3.2.0-el-6-x86_64'

@@ -21,3 +21,5 @@ puppet module install zack/r10k
 FACTER_hierapath=$PWD puppet apply $PWD/master-setup.pp
 
 r10k deploy environment -pv
+
+FACTER_app_env=prod puppet apply -e "include roles::puppet_master"

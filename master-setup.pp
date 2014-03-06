@@ -1,3 +1,5 @@
+# manifest to setup r10k, and ehiera
+
 class { 'r10k':
   version           => '1.1.4',
   sources           => {
@@ -22,7 +24,8 @@ package {'hiera-eyaml':
   provider => 'pe_gem',
 }
 
+# ::hierapath is passed in by master-setup.sh - the only way this .pp should ever be called
 file {'/etc/puppetlabs/puppet/hiera.yaml':
   ensure => file,
-  source => '/root/puppet-master-setup/hiera.yaml',
+  source => "${::hierapath}/hiera.yaml",
 }

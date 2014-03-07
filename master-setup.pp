@@ -1,4 +1,4 @@
-# manifest to setup r10k, and ehiera
+# manifest to setup r10k, and eyaml
 
 class { 'r10k':
   version           => '1.1.4',

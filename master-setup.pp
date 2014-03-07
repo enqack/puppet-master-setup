@@ -1,4 +1,12 @@
-# manifest to setup r10k, and eyaml
+# puppet-master-setup
+#
+# This is a bootstrap for getting anew master up and running
+# using the setup at Fulcrum Technologies Inc.
+#
+# 2014-03-07 bwellington@fulcrum.net
+#
+# This file is the puppet manifest to setup r10k, and eyaml on the new system.
+#
 
 class { 'r10k':
   version           => '1.1.4',

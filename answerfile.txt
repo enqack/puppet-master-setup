@@ -1,4 +1,11 @@
-# answer file to install puppet master
+# puppet-master-setup
+#
+# This is a bootstrap for getting anew master up and running
+# using the setup at Fulcrum Technologies Inc.
+#
+# 2014-03-07 bwellington@fulcrum.net
+#
+# This file is the answer file to install puppet master
 #
 q_all_in_one_install=y
 q_backup_and_purge_old_configuration=n

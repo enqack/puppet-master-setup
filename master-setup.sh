@@ -1,5 +1,13 @@
 #!/bin/bash
 #
+# puppet-master-setup
+#
+# This is a bootstrap for getting anew master up and running
+# using the setup at Fulcrum Technologies Inc.
+#
+# 2014-03-07 bwellington@fulcrum.net
+#
+# This is the shell script that does all the work.
 #
 
 # let's set some variables

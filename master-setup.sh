@@ -18,32 +18,36 @@ detect
 # let's set some more variables
 PUPPET_URL="https://s3.amazonaws.com/pe-builds/released/3.2.1"
 
-if [ "${OS}" = "linux" + "${DIST}" = "Ubuntu"]; then
+if [ "${DIST}" = "Ubuntu" ]; then
 	TARBALL='puppet-enterprise-3.2.1-ubuntu-12.04-amd64.tar.gz'
 	DOWNLOAD_DIR='/home/local_admin/'
 	DEST_DIR='puppet-enterprise-3.2.1-ubuntu-12.04-amd64.tar.gz'
 
-elif [ "${OS}" = "linux" + "${DIST}" = "CentOS"]
+elif [ "${DIST}" = "CentOS" ]; then
 	TARBALL='puppet-enterprise-3.2.1-el-6-x86_64.tar.gz'
 	DOWNLOAD_DIR='/root/Downloads'
 	DEST_DIR='puppet-enterprise-3.2.1-el-6-x86_64'
 
 else
 	echo "Sorry, this script only works for Ubuntu and CentOS."
+	exit
 fi
 
 
 # okay, let's get to work!
+echo "Downloading Puppet Enterprise for ${DIST}."
+
 curl "${PUPPET_URL}/${TARBALL}" -o "${DOWNLOAD_DIR}/${TARBALL}"
 
 tar -xzf "${DOWNLOAD_DIR}/${TARBALL}" -C "${DOWNLOAD_DIR}"
 
 $DOWNLOAD_DIR/$DEST_DIR/puppet-enterprise-installer -a $PWD/answerfile.txt
 
-#puppet module install zack/r10k
+puppet module install zack/r10k
 
-#FACTER_hierapath=$PWD puppet apply $PWD/master-setup.pp
+FACTER_hierapath=$PWD puppet apply $PWD/master-setup.pp
 
-#r10k deploy environment -pv
+r10k deploy environment -pv
 
-#FACTER_app_env=prod puppet apply -e "include roles::puppet_master"
+FACTER_app_env=prod puppet apply -e "include roles::puppet_master"
+

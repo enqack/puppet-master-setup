@@ -40,10 +40,10 @@ tar -xzf "${DOWNLOAD_DIR}/${TARBALL}" -C "${DOWNLOAD_DIR}"
 
 $DOWNLOAD_DIR/$DEST_DIR/puppet-enterprise-installer -a $PWD/answerfile.txt
 
-puppet module install zack/r10k
+#puppet module install zack/r10k
 
-FACTER_hierapath=$PWD puppet apply $PWD/master-setup.pp
+#FACTER_hierapath=$PWD puppet apply $PWD/master-setup.pp
 
-r10k deploy environment -pv
+#r10k deploy environment -pv
 
-FACTER_app_env=prod puppet apply -e "include roles::puppet_master"
+#FACTER_app_env=prod puppet apply -e "include roles::puppet_master"

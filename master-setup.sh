@@ -20,8 +20,8 @@ PUPPET_URL="https://s3.amazonaws.com/pe-builds/released/3.2.1"
 
 if [ "${DIST}" = "Ubuntu" ]; then
 	TARBALL='puppet-enterprise-3.2.1-ubuntu-12.04-amd64.tar.gz'
-	DOWNLOAD_DIR='/home/local_admin/'
-	DEST_DIR='puppet-enterprise-3.2.1-ubuntu-12.04-amd64.tar.gz'
+	DOWNLOAD_DIR='/home/local_admin'
+	DEST_DIR='puppet-enterprise-3.2.1-ubuntu-12.04-amd64'
 
 elif [ "${DIST}" = "CentOS" ]; then
 	TARBALL='puppet-enterprise-3.2.1-el-6-x86_64.tar.gz'
@@ -37,9 +37,9 @@ fi
 # okay, let's get to work!
 echo "Downloading Puppet Enterprise for ${DIST}."
 
-curl "${PUPPET_URL}/${TARBALL}" -o "${DOWNLOAD_DIR}/${TARBALL}"
+#curl "${PUPPET_URL}/${TARBALL}" -o "${DOWNLOAD_DIR}/${TARBALL}"
 
-tar -xzf "${DOWNLOAD_DIR}/${TARBALL}" -C "${DOWNLOAD_DIR}"
+#tar -xzf "${DOWNLOAD_DIR}/${TARBALL}" -C "${DOWNLOAD_DIR}"
 
 $DOWNLOAD_DIR/$DEST_DIR/puppet-enterprise-installer -a $PWD/answerfile.txt
 

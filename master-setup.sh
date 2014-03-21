@@ -39,9 +39,9 @@ fi
 # okay, let's get to work!
 echo "Downloading Puppet Enterprise for ${DIST}."
 
-#curl "${PUPPET_URL}/${TARBALL}" -o "${DOWNLOAD_DIR}/${TARBALL}"
+curl "${PUPPET_URL}/${TARBALL}" -o "${DOWNLOAD_DIR}/${TARBALL}"
 
-#tar -xzf "${DOWNLOAD_DIR}/${TARBALL}" -C "${DOWNLOAD_DIR}"
+tar -xzf "${DOWNLOAD_DIR}/${TARBALL}" -C "${DOWNLOAD_DIR}"
 
 $DOWNLOAD_DIR/$DEST_DIR/puppet-enterprise-installer -a $PWD/answerfile.txt
 

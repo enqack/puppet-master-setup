@@ -10,23 +10,25 @@
 # This is the shell script that does all the work.
 #
 
+# let's set some variables
 
-# Get some more variables from the detect function
+# $DIST comes from the detect-os script
 source detect-os.sh
 detect
 
-# let's set some more variables
-PUPPET_URL="https://s3.amazonaws.com/pe-builds/released/3.2.1"
+# and these variables will be necessary as well
+PUPPET_VER='3.2.1'
+PUPPET_URL="https://s3.amazonaws.com/pe-builds/released/${PUPPET_VER}"
 
 if [ "${DIST}" = "Ubuntu" ]; then
-	TARBALL='puppet-enterprise-3.2.1-ubuntu-12.04-amd64.tar.gz'
+	TARBALL="puppet-enterprise-${PUPPET_VER}-ubuntu-12.04-amd64.tar.gz"
 	DOWNLOAD_DIR='/home/local_admin'
-	DEST_DIR='puppet-enterprise-3.2.1-ubuntu-12.04-amd64'
+	DEST_DIR="puppet-enterprise-${PUPPET_VER}-ubuntu-12.04-amd64"
 
 elif [ "${DIST}" = "CentOS" ]; then
-	TARBALL='puppet-enterprise-3.2.1-el-6-x86_64.tar.gz'
+	TARBALL="puppet-enterprise-${PUPPET_VER}-el-6-x86_64.tar.gz"
 	DOWNLOAD_DIR='/root/Downloads'
-	DEST_DIR='puppet-enterprise-3.2.1-el-6-x86_64'
+	DEST_DIR="puppet-enterprise-${PUPPET_VER}-el-6-x86_64"
 
 else
 	echo "Sorry, this script only works for Ubuntu and CentOS."

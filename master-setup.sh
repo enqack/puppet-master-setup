@@ -17,7 +17,7 @@ source detect-os.sh
 detect
 
 # and these variables will be necessary as well
-PUPPET_VER='3.2.1'
+PUPPET_VER='3.2.0'
 PUPPET_URL="https://s3.amazonaws.com/pe-builds/released/${PUPPET_VER}"
 
 if [ "${DIST}" = "Ubuntu" ]; then

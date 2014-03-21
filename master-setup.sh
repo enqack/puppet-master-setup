@@ -22,7 +22,7 @@ PUPPET_URL="https://s3.amazonaws.com/pe-builds/released/${PUPPET_VER}"
 
 if [ "${DIST}" = "Ubuntu" ]; then
 	TARBALL="puppet-enterprise-${PUPPET_VER}-ubuntu-12.04-amd64.tar.gz"
-	DOWNLOAD_DIR='/home/local_admin'
+	DOWNLOAD_DIR='/root'
 	DEST_DIR="puppet-enterprise-${PUPPET_VER}-ubuntu-12.04-amd64"
 
 elif [ "${DIST}" = "CentOS" ]; then

@@ -6,16 +6,18 @@
 #
 # 2014-03-07 bwellington@fulcrum.net
 #
-# This is the /etc/hiera.yaml file that will be dropped on the new system
+# This is the /etc/puppetlabs/puppet/hiera.yaml file that will be dropped on the new system
 #
+#
+# the variables $hiera_env and $location are set in /etc/puppetlabs/facter/facts.d while $environment is set in puppet.conf
 
 :backends:
   - eyaml
 :hierarchy:
   - "nodes/%{::clientcert}"
-  - "location/%{::location}/%{::app_env}"
+  - "location/%{::location}/%{::hiera_env}"
   - "location/%{::location}/defaults"
-  - "environments/%{::app_env}"
+  - "environments/%{::hiera_env}"
   - global
 
 :eyaml:
